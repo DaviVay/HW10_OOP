@@ -40,7 +40,7 @@ public class Radio {
         }
     }
 
-    public void AboveMinFm() {  //next
+    public void prev() {  //AboveMinFm
         if (fm != 0) {
             fm--;
         } else {
@@ -62,6 +62,10 @@ public class Radio {
         if (volume != 0) {
             volume--;
         }
+        if (volume == 0) {
+            volume = 0;
+        }
+
     }
 
 }

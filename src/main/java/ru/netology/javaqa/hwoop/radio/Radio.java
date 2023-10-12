@@ -3,6 +3,15 @@ package ru.netology.javaqa.hwoop.radio;
 public class Radio {
     private int fm;
     private int volume;
+    private int maxStation;
+
+    public Radio() {
+        maxStation = 9;
+    }
+
+    public Radio(int stationsCount) {
+        maxStation = stationsCount - 1;
+    }
 
     public int getFm() {
         return fm;
@@ -12,7 +21,7 @@ public class Radio {
         if (fm < 0) {
             return;
         }
-        if (fm > 9) {
+        if (fm > maxStation) {
             return;
         }
         this.fm = fm;
@@ -33,7 +42,7 @@ public class Radio {
     }
 
     public void next() {  //AboveMaxFm
-        if (fm != 9) {
+        if (fm != maxStation) {
             fm++;
         } else {
             fm = 0;
@@ -44,7 +53,7 @@ public class Radio {
         if (fm != 0) {
             fm--;
         } else {
-            fm = 9;
+            fm = maxStation;
         }
     }
 
